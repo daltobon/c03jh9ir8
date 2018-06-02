@@ -1,0 +1,35 @@
+<h1>ACTORS HOLLYWOOD</h1>
+
+<table class="table table-bordered text-center table-hover">
+	<thead >
+		<tr class="info">			
+			<th colspan="2">NAME</th>
+			
+			<th class="col-sm-4">BIO</th>
+			<th class="col-sm-2">BIRTH DAY</th>
+			<th class="col-sm-3">BIRTH PLACE</th>		
+			<th class="col-sm-1">DEATH DATE</th>
+			<th class="col-sm-1">DEATH PLACE</th>			
+		</tr>		
+	</thead>
+
+	<% @actor.each do |actor| %>
+	<tbody>
+		<tr>
+			<td><img class="thumbnail" src='<%= actor.image_url%>'.html_safe width="80px"></td>
+			<td><%= actor.name %></td>		
+			<td><%= actor.bio %></td>
+			<td><%= actor.birth_date %></td>
+			<td><%= actor.birth_place %></td>
+			<% if actor.alive == false %>
+				<td><%= actor.death_date.to_formatted_s(:long) %></td>
+				<td><%= actor.death_place %></td>	
+			<% else %>
+				<td> --- </td>
+				<td> --- </td>		
+			<% end %>				
+		</tr>		
+	<% end %>
+	</tbody>
+
+</table>
