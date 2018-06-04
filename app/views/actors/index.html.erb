@@ -1,18 +1,17 @@
-<h1>ACTORS HOLLYWOOD</h1>
-
+<h1>ACTORS OF HOLLYWOOD</h1>
+<%= link_to 'Crear Actor', '/actors/new', class: 'btn btn-success pull-right btn-sm'%>
+<br><br>
 <table class="table table-bordered text-center table-hover">
-	<thead >
+	<thead>
 		<tr class="info">			
-			<th colspan="2">NAME</th>
-			
+			<th class="col-sm-3" colspan="2">NAME</th>			
 			<th class="col-sm-4">BIO</th>
-			<th class="col-sm-2">BIRTH DAY</th>
-			<th class="col-sm-3">BIRTH PLACE</th>		
+			<th class="col-sm-1">BIRTH DAY</th>
+			<th class="col-sm-1">BIRTH PLACE</th>		
 			<th class="col-sm-1">DEATH DATE</th>
 			<th class="col-sm-1">DEATH PLACE</th>			
 		</tr>		
 	</thead>
-
 	<% @actor.each do |actor| %>
 	<tbody>
 		<tr>
@@ -31,5 +30,4 @@
 		</tr>		
 	<% end %>
 	</tbody>
-
 </table>

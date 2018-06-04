@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="well col-md-6 col-md-offset-3">
+    <h1>NEW ACTOR</h1>
+    <%= link_to 'Actors', '/actors', class: 'btn btn-primary btn-sm'%> <br><hr>
+    <%= form_for @actor do |f| %>
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control input-sm", placeholder: "Name" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :bio, class: "form-control input-sm", placeholder: "Biography", rows: 7, cols: 4 %>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Birth Date' %>
+      <%= f.date_field :birth_date,  class: "form-control input-sm" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :birth_place, class: "form-control input-sm", placeholder: "Birth Place" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :image_url, class: "form-control input-sm", placeholder: "URL Picture" %>
+    </div>
+    <div class="form-group">
+      <%= f.label "Alive?" %>
+      <%= f.label "YES" %>
+      <%= f.radio_button :alive, true %>
+      <%= f.label "NO" %>
+      <%= f.radio_button :alive, false %>
+    </div>
+    <div class="form-group">
+      <%= f.label 'Death Date' %>
+      <%= f.date_field :death_date, class: "form-control input-sm" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :death_place, class: "form-control input-sm", placeholder: "Death Place" %>
+    </div>          
+    <div>
+      <%= f.submit 'submit', class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    <% end %>
+  </div>  
+</div>
